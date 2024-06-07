@@ -8,7 +8,7 @@ if (!cart) {
  }, {
   productId: '15b6fc6f-327a-4ec4-896f-486349e85a3d',
   quantity: 1,
-  delivaryOptionId: '1'
+  delivaryOptionId: '2'
  }]; 
 }
 
@@ -46,6 +46,18 @@ cart.forEach((cartItem) => {
 
 cart = newCart;
 saveToStorage();
+}
+
+export function updateDelivaryOption(productId, delivaryOptionId) {
+  let matchingItem;
+  cart.forEach((cartItem) => {
+   if (productId === cartItem.productId) {
+     matchingItem = cartItem;
+   }
+  });
+
+  matchingItem.delivaryOptionId = delivaryOptionId;
+  saveToStorage();
 }
 
 

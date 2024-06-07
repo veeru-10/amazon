@@ -1,9 +1,10 @@
-import {cart} from '../data/cart.js';//named export
+import {cart, updateDelivaryOption} from '../data/cart.js';//named export
 import {products} from '../data/products.js';
 import { formatCurrency } from '../utils/money.js';
 import {removeFromCart} from '../data/cart.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';//default export
 import {delivaryOptions} from '../data/delivaryOptions.js';
+
 
 
 
@@ -72,7 +73,9 @@ const dateString = delivaryDate.format(
       </div>
     </div>
 
-    <div class="delivery-options js-delivary-options">
+    <div class="delivery-options js-delivary-options"
+     data-product-id="${matchingProduct.id}"
+     data-delivary-option-id="${delivaryOption.id}">
       <div class="delivery-options-title">
         Choose a delivery option:
       </div>
@@ -131,5 +134,12 @@ link.addEventListener('click', () => {
  const container = document.querySelector(`.js-cart-item-container-${productId}`);
  container.remove();
  updateCartQuantity();
+ });
+});
+
+document.querySelectorAll('.js-delivary-options').forEach((element) => {
+ element.addEventListener('click', () => {
+  const {productId, delivaryOptionId} = element.dataset;
+  updateDelivaryOption(productId, delivaryOptionId);
  });
 });
