@@ -149,4 +149,4 @@ function renderOrderSummery() {
   });
 }
 
-renderOrderSummery();
+renderOrderSummery();//MVC 1model-2view-3controller
