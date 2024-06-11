@@ -4,14 +4,15 @@ import { formatCurrency } from '../../utils/money.js';
 import {removeFromCart} from '../../data/cart.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';//default export
 import {deliveryOptions, getDeliveryOption} from '../../data/deliveryOptions.js';
+import {renderPaymentSummary} from './paymentSummery.js';
 
 
 
 
 
-const today = dayjs();
-const deliveryDate = today.add(7, 'days');
-console.log(deliveryDate.format('dddd, MMMM D'));
+// const today = dayjs();
+// const deliveryDate = today.add(7, 'days');
+// console.log(deliveryDate.format('dddd, MMMM D'));
 
 export function renderOrderSummery() {
   let cartSummeryHTML = '';
@@ -126,6 +127,7 @@ export function renderOrderSummery() {
   const container = document.querySelector(`.js-cart-item-container-${productId}`);
   container.remove();
   updateCartQuantity();
+  renderPaymentSummary();
   });
   });
 
@@ -135,6 +137,7 @@ export function renderOrderSummery() {
       const {productId, deliveryOptionId} = element.dataset;
       updateDeliveryOption(productId, deliveryOptionId);
       renderOrderSummery();
+      renderPaymentSummary();
     });
   });
 }
