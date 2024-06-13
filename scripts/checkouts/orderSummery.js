@@ -5,6 +5,7 @@ import {removeFromCart} from '../../data/cart.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';//default export
 import {deliveryOptions, getDeliveryOption} from '../../data/deliveryOptions.js';
 import {renderPaymentSummary} from './paymentSummery.js';
+import {saveToStorage} from '../../data/cart.js';
 
 
 
@@ -78,6 +79,7 @@ export function renderOrderSummery() {
   });
 
 
+
   function deliveryOptionsHTML(matchingProduct, cartItem) {
     let html = '';
     deliveryOptions.forEach((deliveryOption) => {
@@ -115,6 +117,14 @@ export function renderOrderSummery() {
   return html;
   }
 
+  let cartQuantity = 0;
+
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+
+ document.querySelector('.js-return-to-home-link').innerHTML = cartQuantity;
+ 
 
   document.querySelector('.js-order-summery').innerHTML = cartSummeryHTML;
 
