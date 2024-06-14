@@ -34,4 +34,5 @@ console.log('passed');
 2. edge cases -test with values that are tricky */
 
 
-//testing framework - external library used for texting popular framework is - jasmine
+//testing framework - external library that helps us write test easier 
+// texting popular framework is - jasmine
