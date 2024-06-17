@@ -21,7 +21,7 @@ cart.forEach((cartItem) => {
   shippingPriceCents += deliveryOption.priceCents;
  });
 const totalBeforeTaxCents = productPriceCents + shippingPriceCents;
-console.log(totalBeforeTaxCents);
+
 
 const taxCents = totalBeforeTaxCents * 0.1;
 const totalCents = totalBeforeTaxCents + taxCents;
