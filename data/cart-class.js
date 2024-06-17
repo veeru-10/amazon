@@ -1,16 +1,16 @@
 //class is a better way to generate objects in oop
 
 class Cart {   //use pascal case -Class- for oop, it is a object generator
- cartItems;//cartItems = undefined;
- localStorageKey;//localStorageKey = undefined;
+ cartItems;//cartItems = undefined;// it is a public property
+ #localStorageKey;//localStorageKey = undefined;//# represents private property that means cannot access outside of class 
 
  constructor(localStorageKey) {
-  this.localStorageKey = localStorageKey;
-  this.loadFromStorage();
+  this.#localStorageKey = localStorageKey;
+  this.#loadFromStorage();
  }
 
- loadFromStorage() {
-  cart.cartItems = JSON.parse(localStorage.getItem(this.localStorageKey));
+ #loadFromStorage() {
+  Cart.cartItems = JSON.parse(localStorage.getItem(this.#localStorageKey));
  
    if (!this.cartItems) {
    this.cartItems = [{
@@ -26,7 +26,7 @@ class Cart {   //use pascal case -Class- for oop, it is a object generator
  }
 
  saveToStorage() {
-  localStorage.setItem(this.localStorageKey, JSON.stringify(this.cartItems));
+  localStorage.setItem(this.#localStorageKey, JSON.stringify(this.cartItems));
 }
 
 
@@ -86,6 +86,8 @@ const businessCart = new Cart('business-oop');
 console.log(cart);
 console.log(businessCart);
 console.log(businessCart instanceof Cart);//true
+
+//cart.#localStorageKey = 'test';
 
 
 //instance = an object generated from a class is known as instance example Cart, businessCart; 
