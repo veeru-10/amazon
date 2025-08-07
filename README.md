@@ -22,7 +22,7 @@ Design: Flexbox, Grid, Media Queries
 <img width="1920" height="1080" alt="Screenshot (6)" src="https://github.com/user-attachments/assets/4ef333f8-3a02-4509-95cf-b975dde373dc" />
 
 📄 License
-> This project is open-source and available under the MIT License.
+> This project is open-source and available under the MIT(Massachusetts Institute of Technology) License.
 
 👩‍💻 Author
 > Veeranjini Vemala
