@@ -18,4 +18,13 @@ Frontend: HTML5, CSS3, JavaScript
 Design: Flexbox, Grid, Media Queries
 
 📸 Preview
+
 <img width="1920" height="1080" alt="Screenshot (6)" src="https://github.com/user-attachments/assets/4ef333f8-3a02-4509-95cf-b975dde373dc" />
+
+📄 License
+> This project is open-source and available under the MIT License.
+
+👩‍💻 Author
+> Veeranjini Vemala
+> GitHub: @veeru-10
+> Email: veeranjinivemala@gmail.com
